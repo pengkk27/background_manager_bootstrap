@@ -15,20 +15,21 @@
             <div class="col col-lg-2">
             </div>
             <div class="col-md-3" style="margin-top: 150px;">
-                <form class="py-4 px-3 shadow rounded">
+                <form onsubmit="return validateForm()" action="#" method="post" class="py-4 px-3 shadow rounded" novalidate>
                     <h3 class="text-center my-3">账号登录</h3>
                     <div class="row mb-3">
                         <label for="inputEmail3" class="col-sm-2 col-form-label text-center">账号</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail3">
+                            <input type="email" name="account" class="form-control" id="inputEmail3">
+                            <span class="error" id="nameErr"></span>
                         </div>
-                      </div>
-                      <div class="row mb-3">
+                    </div>
+                    <div class="row mb-3">
                         <label for="inputPassword3" class="col-sm-2 col-form-label text-center">密码</label>
                         <div class="col-sm-10">
-                          <input type="password" class="form-control" id="inputPassword3">
+                            <input type="password" class="form-control" id="inputPassword3">
                         </div>
-                      </div>
+                    </div>
                     <button type="submit" class="btn btn-primary w-100">登录</button>
                 </form>
             </div>
@@ -36,6 +37,25 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // 显示错误消息
+        function printError(elemId, hintMsg) {
+            document.getElementById(elemId).innerHTML = hintMsg;
+        }
+
+        // 验证表单数据
+        function validateForm() {
+
+            // 获取表单元素的值
+            var account = document.querySelector("input[name='account']").value;              
+            if(account == "" || account == null){
+                printError("nameErr", "用户名不能为空");
+                return false;
+            }
+            
+        }
+    </script>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
