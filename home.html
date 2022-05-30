@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/bootstrap.min.css" rel="stylesheet">
-    <title></title>
+    <title>Home</title>
 </head>
+
 <body>
     <!-- 顶部导航栏 -->
-    <div class="d-flex justify-content-between bg-primary">
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link active  text-white" aria-current="page" href="#">Active</a>
-            </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg d-flex justify-content-between bg-primary px-5">
+        <div>
+            <a class="navbar-brand text-white" href="#">首页</a>
+        </div>
 
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link active  text-white" aria-current="page" href="#">Active</a>
+
+        <ul class="nav mx-5">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    管理员
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">个人中心</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">退出</a></li>
+                    
+                </ul>
             </li>
         </ul>
-    </div>
+    </nav>
 
     <!-- 主题页面 -->
     <div>
         <!-- 侧边导航栏 -->
-        
+
         <!-- 右边主体 -->
     </div>
     <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
