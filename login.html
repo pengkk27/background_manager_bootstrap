@@ -15,22 +15,23 @@
             <div class="col col-lg-2">
             </div>
             <div class="col-md-3" style="margin-top: 150px;">
-                <form onsubmit="return validateForm()" action="#" method="post" class="py-4 px-3 shadow rounded" novalidate>
+                <form onsubmit="return false" action="#" method="post" class="py-4 px-3 shadow rounded" novalidate>
                     <h3 class="text-center my-3">账号登录</h3>
                     <div class="row mb-3">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label text-center">账号</label>
+                        <label for="account" class="col-sm-2 col-form-label text-center">账号</label>
                         <div class="col-sm-10">
-                            <input type="email" name="account" class="form-control" id="inputEmail3">
-                            <span class="error" id="nameErr"></span>
+                            <input type="email" name="account" class="form-control" id="account">
+                            <small class="text-danger" id="accountErr"></small>
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label text-center">密码</label>
+                        <label for="password" class="col-sm-2 col-form-label text-center">密码</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPassword3">
+                            <input type="password" name="password" class="form-control" id="password">
+                            <small class="text-danger" id="passwordErr"></small>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">登录</button>
+                    <button type="submit" onclick="validateForm() " class="btn btn-primary w-100">登录</button>
                 </form>
             </div>
             <div class="col col-lg-2">
@@ -39,25 +40,44 @@
     </div>
 
     <script>
-        // 显示错误消息
-        function printError(elemId, hintMsg) {
-            document.getElementById(elemId).innerHTML = hintMsg;
+
+        function strToJson(str) {
+            return JSON.parse(str);
         }
 
         // 验证表单数据
         function validateForm() {
-
             // 获取表单元素的值
-            var account = document.querySelector("input[name='account']").value;              
-            if(account == "" || account == null){
-                printError("nameErr", "用户名不能为空");
-                return false;
+            var account = document.getElementById("account").value;
+            var password = document.getElementById("password").value;
+            if (account.trim() == "" || account == null) {
+                document.getElementById("accountErr").innerHTML = "账号不能为空";
+            } else if (password.trim() == "" || password == null) {
+                document.getElementById("accountErr").innerHTML = "";
+                document.getElementById("passwordErr").innerHTML = "密码不能为空";
+            } else {
+                document.getElementById("accountErr").innerHTML = "";
+                document.getElementById("passwordErr").innerHTML = "";
+                var requestJaonStr = '{"account":"' + account + '",' + '"password":"' + password + '"}';
+
+                $.ajax({
+                    type: 'POST',
+                    url: '',
+                    dataType: "json",
+                    data: strToJson(requestJaonStr),
+                    success: function (result) {
+                        console.log("yes")
+                    },
+                    error: function () {
+
+                    }
+                });
             }
-            
         }
     </script>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>
