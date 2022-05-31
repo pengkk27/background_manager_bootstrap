@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <style>
         html,
         body {
@@ -21,8 +22,6 @@
         #content {
             height: 95%
         }
-
-
     </style>
     <title>Home</title>
 </head>
@@ -56,19 +55,18 @@
         <!-- 主题页面 -->
         <div class="d-flex flex-row w-100" id="content">
             <!-- 侧边导航栏 -->
-            <div class="bg-dark bg-gradient bg-primary" style="width: 10%;">
+            <div class="bg-dark p-2" style="width: 10%;">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                        <a class="nav-link fs-6 text-white w-100" href="#"><i class="fa fa-home"></i> 首页</a>
                     </li>
+                    <hr class="text-white my-2" />
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
+                        <a class="nav-link fs-6 text-white w-100" data-bs-toggle="collapse" href="#ul1">Active</a>
+                        <ul class="collapse" id="ul1">
+                            <li class="text-white"><a class="" href="#">abc</a></li>
+                            <li class="text-white"><a class="" href="#">def</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
