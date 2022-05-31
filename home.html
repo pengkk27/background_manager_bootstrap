@@ -16,31 +16,44 @@
             <a class="navbar-brand text-white" href="#">首页</a>
         </div>
 
-
-        <ul class="nav mx-5">
+        <ul class="navbar-nav">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
                     管理员
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">个人中心</a></li>
+                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item text-center" onclick="personal()" href="#">个人中心</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">退出</a></li>
-                    
+                    <li><a class="dropdown-item text-center" onclick="logout()" href="#">退出登录</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
 
     <!-- 主题页面 -->
-    <div>
+    <div class="row">
         <!-- 侧边导航栏 -->
+        <div></div>
+
 
         <!-- 右边主体 -->
+        <div></div>
     </div>
+
+
+    <script>
+        function personal() {
+            console.log("个人中心")
+        }
+
+        function logout() {
+            console.log("退出登录")
+        }
+
+    </script>
     <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 
