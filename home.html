@@ -6,42 +6,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar {
+            height: 5%;
+        }
+
+        #content {
+            height: 95%
+        }
+
+
+    </style>
     <title>Home</title>
 </head>
 
 <body>
-    <!-- 顶部导航栏 -->
-    <nav class="navbar navbar-expand-lg d-flex justify-content-between bg-primary px-5">
-        <div>
-            <a class="navbar-brand text-white" href="#">首页</a>
-        </div>
 
-        <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    管理员
-                </a>
-                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item text-center" onclick="personal()" href="#">个人中心</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
+    <div class="h-100">
+        <!-- 顶部导航栏 -->
+        <nav class="navbar navbar-expand-lg d-flex justify-content-between bg-primary px-5" id="navbar">
+            <div>
+                <a class="navbar-brand text-white" href="#">首页</a>
+            </div>
+
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        管理员
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item text-center" onclick="personal()" href="#">个人中心</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item text-center" onclick="logout()" href="#">退出登录</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- 主题页面 -->
+        <div class="d-flex flex-row w-100" id="content">
+            <!-- 侧边导航栏 -->
+            <div class="bg-dark bg-gradient bg-primary" style="width: 10%;">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
                     </li>
-                    <li><a class="dropdown-item text-center" onclick="logout()" href="#">退出登录</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
                 </ul>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- 主题页面 -->
-    <div class="row">
-        <!-- 侧边导航栏 -->
-        <div></div>
+            </div>
 
 
-        <!-- 右边主体 -->
-        <div></div>
+            <!-- 右边主体 -->
+            <div class="bg-danger" style="width: 90%;">asd</div>
+        </div>
     </div>
+
+
+
+
 
 
     <script>
