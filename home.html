@@ -56,16 +56,20 @@
         <div class="d-flex flex-row w-100" id="content">
             <!-- 侧边导航栏 -->
             <div class="bg-dark p-2" style="width: 10%;">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link fs-6 text-white w-100" href="#"><i class="fa fa-home"></i> 首页</a>
+                <ul class="nav nav-pills flex-column" role="tablist">
+                    <li class="nav-item active">
+                        <a class="nav-link fs-6 text-white w-100" data-bs-toggle="pill" data-bs-target="#home" role="tab" aria-controls="home" aria-selected="true"><i
+                                class="fa fa-home"></i> 首页</a>
                     </li>
                     <hr class="text-white my-2" />
                     <li class="nav-item">
-                        <a class="nav-link fs-6 text-white w-100" data-bs-toggle="collapse" href="#ul1"><i class="fa fa-book"></i> 书籍管理</a>
+                        <a class="nav-link fs-6 text-white w-100" data-bs-toggle="collapse" href="#ul1"><i
+                                class="fa fa-book"></i> 书籍管理</a>
                         <ul class="collapse list-group list-group-flush bg-dark px-3" id="ul1">
-                            <li class="list-group-item bg-dark"><a class="text-white text-decoration-none" href="#">abc</a></li>
-                            <li class="list-group-item bg-dark"><a class="text-white text-decoration-none" href="#">def</a></li>
+                            <li class="list-group-item bg-dark"><a class="text-white text-decoration-none"
+                                    href="#" data-bs-toggle="pill" data-bs-target="#ios" role="tab" aria-controls="ios" aria-selected="true">abc</a></li>
+                            <li class="list-group-item bg-dark"><a class="text-white text-decoration-none"
+                                    href="#">def</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -73,7 +77,15 @@
 
 
             <!-- 右边主体 -->
-            <div class="bg-danger" style="width: 90%;">asd</div>
+            <div class="bg-light tab-content" style="width: 90%;">
+                <div class="tab-pane show fade in active text-black" id="home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <p>菜鸟教程是一个提供最新的web技术站点，本站免费提供了建站相关的技术文档，帮助广大web技术爱好者快速入门并建立自己的网站。菜鸟先飞早入行——学的不仅是技术，更是梦想。</p>
+                </div>
+                <div class="tab-pane fade" id="ios" role="tabpanel" aria-labelledby="pills-ios-tab">
+                    <p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple
+                        TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -83,13 +95,11 @@
 
 
     <script>
-        function personal() {
-            console.log("个人中心")
-        }
+        $('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
 
-        function logout() {
-            console.log("退出登录")
-        }
 
     </script>
     <script src="./js/bootstrap.bundle.min.js"></script>
